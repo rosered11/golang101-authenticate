@@ -3,7 +3,7 @@ package dto
 import (
 	"strings"
 
-	"github.com/rosered11/golang101-authenticate/errors"
+	"github.com/rosered11/golang101-lib/errors"
 )
 
 type NewAccountRequest struct {

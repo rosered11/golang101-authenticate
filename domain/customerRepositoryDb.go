@@ -5,8 +5,8 @@ import (
 
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jmoiron/sqlx"
-	"github.com/rosered11/golang101-authenticate/errors"
-	"github.com/rosered11/golang101-authenticate/logger"
+	"github.com/rosered11/golang101-lib/errors"
+	"github.com/rosered11/golang101-lib/logger"
 )
 
 type CustomerRepositoryDb struct {

@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"os"
 	"time"
 
 	"github.com/gorilla/mux"
@@ -31,8 +30,12 @@ func Start() {
 	router.HandleFunc("/customers/{customer_id:[0-9]+}", ch.getCustomer).Methods(http.MethodGet)
 	router.HandleFunc("/customers/{customer_id:[0-9]+}/account", ah.saveNewAccount).Methods(http.MethodPost)
 
-	addr := os.Getenv("SERVER_ADDR") // localhost
-	port := os.Getenv("SERVER_PORT") // 8000
+	// customer middle ware
+	am := AuthMiddleware{domain.NewAuthRepository()}
+	router.Use(am.authorizationHandler())
+
+	addr := "localhost" //os.Getenv("SERVER_ADDR") //
+	port := "8000"      //os.Getenv("SERVER_PORT") //
 	// starting server
 	log.Fatal(http.ListenAndServe(fmt.Sprintf("%s:%s", addr, port), router))
 }

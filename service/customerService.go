@@ -3,7 +3,7 @@ package service
 import (
 	"github.com/rosered11/golang101-authenticate/domain"
 	"github.com/rosered11/golang101-authenticate/dto"
-	"github.com/rosered11/golang101-authenticate/errors"
+	"github.com/rosered11/golang101-lib/errors"
 )
 
 type CustomerService interface {

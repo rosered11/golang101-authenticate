@@ -2,7 +2,7 @@ package domain
 
 import (
 	"github.com/rosered11/golang101-authenticate/dto"
-	"github.com/rosered11/golang101-authenticate/errors"
+	"github.com/rosered11/golang101-lib/errors"
 )
 
 type Account struct {
